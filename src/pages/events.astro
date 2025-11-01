@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const events = [
+  {
+    id: 1,
+    title: "Skull-Tubby Costume Bash",
+    date: "October 31st, 2023",
+    location: "Virtual via Zoom & In-Person at Echo Park, LA",
+    description: "Dress as your favorite Teletubby reimagined with skulls! Expect DIY workshops, photo ops, and a live DJ spinning tubby tunes. Don't miss the best costume award – prizes include exclusive merch!",
+    image: "skull-tubby"
+  },
+  {
+    id: 2,
+    title: "Teletubby Trivia Night",
+    date: "November 15th, 2023",
+    location: "Online",
+    description: "Test your knowledge of all things Teletubbies with our spooky trivia challenge. Earn points, win prizes, and connect with fellow fans from around the world.",
+    image: "trivia"
+  },
+  {
+    id: 3,
+    title: "Tubby-Tastic Art Workshop",
+    date: "December 5th, 2023",
+    location: "Los Angeles, CA",
+    description: "Unleash your creativity with our guided art session. Create your own skull-tubby mashup masterpiece using various mediums like paint, clay, and mixed media.",
+    image: "art"
+  },
+  {
+    id: 4,
+    title: "Halloween Haunted Meetup",
+    date: "October 31st, 2023",
+    location: "Santa Monica, CA",
+    description: "Join us for a spooky evening of haunted attractions, trick-or-treating, and socializing with the most unique Teletubbies community in town.",
+    image: "haunted"
+  }
+];
+
+const featuredEvent = events[0];
+---
+
+<Layout title="Upcoming Events" description="Discover exciting events at Tinky Winky Skulls, where Teletubbies meet skull vibes. Join fan meetups, themed parties, and more for the ultimate fan experience.">
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-primary to-accent py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-48 h-48 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white rounded-full"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          Upcoming <span class="text-accent">Events</span>
+        </h1>
+        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          Discover exciting events at Tinky Winky Skulls, where Teletubbies meet skull vibes. 
+          Join fan meetups, themed parties, and more for the ultimate fan experience.
+        </p>
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 inline-block">
+          <p class="text-white font-semibold">The Ultimate Teletubbies Fan Club with a Skull-Twist</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Event -->
+  <section class="py-20 bg-primary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Featured Event</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="max-w-5xl mx-auto bg-white rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-[1.01]">
+        <div class="md:flex">
+          <div class="md:w-1/2 bg-gradient-to-br from-accent to-primary p-8 flex flex-col justify-center">
+            <div class="flex items-center mb-4">
+              <div class="w-3 h-3 bg-accent rounded-full mr-2"></div>
+              <span class="text-accent font-bold">FEATURED EVENT</span>
+            </div>
+            <h3 class="text-3xl font-bold text-white mb-4">{featuredEvent.title}</h3>
+            <div class="flex items-center text-gray-200 mb-4">
+              <i class="fas fa-calendar-alt mr-2"></i>
+              <span>{featuredEvent.date}</span>
+            </div>
+            <div class="flex items-center text-gray-200 mb-6">
+              <i class="fas fa-map-marker-alt mr-2"></i>
+              <span>{featuredEvent.location}</span>
+            </div>
+            <p class="text-gray-300 mb-6">{featuredEvent.description}</p>
+            <button class="bg-accent hover:bg-white text-white hover:text-accent font-bold py-3 px-6 rounded-lg transition duration-300 w-full md:w-auto">
+              Register Now
+            </button>
+          </div>
+          <div class="md:w-1/2 relative">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent to-primary opacity-70"></div>
+            <div class="relative h-full flex items-center justify-center p-8">
+              <div class="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-64 flex items-center justify-center text-gray-500">
+                Event Image
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Events Grid -->
+  <section class="py-20 bg-secondary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">All Events</h2>
+        <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+        <p class="text-gray-300 max-w-2xl mx-auto">
+          Join us for a variety of events designed to bring the Teletubbies community together in unique ways
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {events.map((event) => (
+          <div key={event.id} class="bg-white rounded-xl overflow-hidden shadow-xl transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+            <div class="h-48 bg-gradient-to-br from-accent to-primary relative">
+              <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex items-center justify-center text-gray-500">
+                  {event.image}
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="text-xl font-bold text-primary">{event.title}</h3>
+                <span class="bg-accent text-white text-xs font-bold px-2 py-1 rounded-full">NEW</span>
+              </div>
+              <div class="flex items-center text-gray-600 mb-3">
+                <i class="fas fa-calendar-alt mr-2"></i>
+                <span class="text-sm">{event.date}</span>
+              </div>
+              <div class="flex items-center text-gray-600 mb-4">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span class="text-sm">{event.location}</span>
+              </div>
+              <p class="text-gray-700 text-sm mb-6 line-clamp-3">{event.description}</p>
+              <button class="w-full bg-primary hover:bg-accent text-white font-medium py-2 px-4 rounded-lg transition duration-300">
+                Learn More
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-20 bg-gradient-to-r from-accent to-primary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-white mb-6">Ready to Join the Fun?</h2>
+        <p class="text-xl text-gray-100 mb-10">
+          Don't miss out on the most exciting events in the Teletubbies skull community
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition duration-300 shadow-lg">
+            View All Events
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-4 px-8 rounded-lg transition duration-300">
+            Join Our Community
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

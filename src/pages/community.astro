@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  { 
+    icon: 'fas fa-users', 
+    title: 'Connect with Fellow Fans', 
+    text: 'Chat in forums, share fan art, and collaborate on skull-infused Teletubbies cosplay ideas.' 
+  },
+  { 
+    icon: 'fas fa-calendar-alt', 
+    title: 'Exclusive Events', 
+    text: 'Participate in virtual watch parties, art contests, and themed challenges that blend nostalgia with edge.' 
+  },
+  { 
+    icon: 'fas fa-brush', 
+    title: 'Creative Hub', 
+    text: 'Upload your designs, stories, and mods—our gallery showcases the best high-contrast creations.' 
+  }
+];
+
+const testimonials = [
+  {
+    name: 'SkullWatcher92',
+    text: 'This community completely transformed my view of Teletubbies. The art is incredible!',
+    avatar: 'SW'
+  },
+  {
+    name: 'PoTheGoth',
+    text: 'Finally, a place where I can express my love for both nostalgia and darkness!',
+    avatar: 'PT'
+  },
+  {
+    name: 'TinkySkull',
+    text: 'The events are so creative and the community is so welcoming. Highly recommend!',
+    avatar: 'TS'
+  }
+];
+
+const events = [
+  { 
+    date: 'June 15', 
+    title: 'Skull-Infused Teletubbies Art Contest', 
+    description: 'Showcase your best Tinky Winky with skull elements' 
+  },
+  { 
+    date: 'June 22', 
+    title: 'Virtual Watch Party: Po\'s Adventure', 
+    description: 'Re-watch with our exclusive skull-themed commentary' 
+  },
+  { 
+    date: 'June 29', 
+    title: 'Cosplay Challenge', 
+    description: 'Create your best Teletubbies skull costume' 
+  }
+];
+---
+
+<Layout title="Join the Tinky Winky Skulls Community" description="Dive into our vibrant community where Teletubbies fans unite with a edgy skull twist. Share art, discuss episodes, and celebrate the quirky side of childhood icons in a modern, high-contrast space.">
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent transform skew-y-3"></div>
+    <div class="relative container mx-auto px-4 py-24 md:py-32">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Join the <span class="text-accent">Tinky Winky Skulls</span> Community
+        </h1>
+        <p class="text-xl text-gray-200 mb-8 max-w-2xl">
+          Dive into our vibrant community where Teletubbies fans unite with a edgy skull twist. Share art, discuss episodes, and celebrate the quirky side of childhood icons in a modern, high-contrast space.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button class="bg-accent hover:bg-white text-white hover:text-accent font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+            Join Now
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-accent font-bold py-3 px-8 rounded-lg transition-all duration-300">
+            Explore Events
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tagline Section -->
+  <div class="bg-black py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-white text-lg md:text-xl font-light tracking-wide">
+        The Ultimate Teletubbies Fan Club with a Skull-Twist
+      </p>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gradient-to-b from-primary to-black">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Join Us?</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            class="bg-black border border-gray-800 rounded-xl p-8 hover:border-accent transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+            <p class="text-gray-300">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Welcome Section -->
+  <section class="py-20 bg-black">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-r from-primary to-accent p-1 rounded-xl mb-12">
+          <div class="bg-black rounded-xl p-8 md:p-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Welcome to the Tinky Winky Skulls Community</h2>
+            <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+              Step into a world where the sunny hills of Teletubbyland meet the shadowy allure of skulls! 
+              At <span class="text-accent font-bold">Tinky Winky Skulls</span>, we're not your average fan club—we're the ultimate gathering spot for fans 
+              who love reimagining the Teletubbies with a bold, gothic edge. Whether you're sketching <span class="font-bold">Tinky Winky</span> 
+              with a skull helmet or debating the deepest lore of <span class="font-bold">Po's</span> adventures, this is your tribe.
+            </p>
+            <p class="text-lg text-gray-400 italic">
+              This is where nostalgia meets rebellion, and childhood icons take on a darker, more mysterious twist.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-gradient-to-b from-black to-primary">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Community Voices</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Hear what our members are saying about their experience</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            key={index} 
+            class="bg-black border border-gray-800 rounded-xl p-8 hover:border-accent transition-all duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold mr-4">
+                {testimonial.avatar}
+              </div>
+              <h4 class="text-white text-xl font-bold">{testimonial.name}</h4>
+            </div>
+            <p class="text-gray-300 italic">"{testimonial.text}"</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="py-20 bg-black">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Upcoming Events</h2>
+        <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Join our exclusive virtual events and challenges that celebrate the unique blend of Teletubbies nostalgia and skull aesthetics
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-6">
+          {events.map((event, index) => (
+            <div 
+              key={index} 
+              class="bg-gradient-to-r from-primary to-black border border-gray-800 rounded-xl p-6 flex flex-col md:flex-row items-start md:items-center hover:border-accent transition-all duration-300"
+            >
+              <div class="bg-accent text-white rounded-lg py-3 px-6 mb-4 md:mb-0 md:mr-6">
+                <div class="text-xl font-bold">{event.date}</div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-xl font-bold text-white mb-2">{event.title}</h3>
+                <p class="text-gray-400">{event.description}</p>
+              </div>
+              <button class="mt-4 md:mt-0 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 whitespace-nowrap">
+                Join Event
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join the Skulls?</h2>
+        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          Become part of our exclusive community where creativity meets the unconventional. 
+          Your journey into the world of Tinky Winky Skulls starts here.
+        </p>
+        <button class="bg-white text-accent hover:bg-gray-200 font-bold py-4 px-12 rounded-lg text-lg transition-all duration-300 transform hover:scale-105">
+          Create Your Account
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,207 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const perks = [
+  {
+    title: "Member-Only Events",
+    description: "Attend virtual and in-person gatherings, like skull-themed Teletubbies watch parties and fan art contests. Get early bird access to limited spots!"
+  },
+  {
+    title: "Discounted Merchandise",
+    description: "Score 20% off our high-contrast skull-infused Teletubbies apparel, posters, and collectibles. From Tinky Winky's purple skull hoodie to geometric Dipsy mugs—shop in style."
+  },
+  {
+    title: "Private Community Access",
+    description: "Dive into our exclusive forums and Discord channels with fellow fans. Share your theories, art, and get access to exclusive content before anyone else."
+  },
+  {
+    title: "Exclusive Content",
+    description: "Unlock behind-the-scenes videos, never-before-seen sketches, and special interviews with the creators of Tinky Winky's skull twist universe."
+  }
+];
+
+const events = [
+  { date: "June 15", title: "Skull Watch Party", location: "Virtual" },
+  { date: "July 22", title: "Fan Art Contest", location: "Online" },
+  { date: "August 5", title: "Geometric Design Workshop", location: "In Person" },
+  { date: "September 10", title: "Tinky Winky Trivia Night", location: "Virtual" }
+];
+---
+
+<Layout title="Club Perks - Tinky Winky Skulls" description="Discover the exclusive benefits of joining Tinky Winky Skulls, the ultimate Teletubbies fan club with a skull-twist. Enjoy perks like member-only events, merchandise discounts, and a vibrant community.">
+  <div class="min-h-screen bg-[#2e2e2e] text-white">
+    {/* Hero Section */}
+    <div class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#0d1b2a] to-[#2e2e2e] opacity-90"></div>
+      <div class="absolute inset-0">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-[#0d1b2a] transform skew-x-12"></div>
+        <div class="absolute bottom-0 left-0 w-1/4 h-1/2 bg-[#0d1b2a] transform skew-x-12 origin-top-left"></div>
+      </div>
+      <div class="relative container mx-auto px-4 py-32 md:py-48 flex flex-col items-center text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+          Club <span class="text-[#0d1b2a]">Perks</span>
+        </h1>
+        <p class="text-xl md:text-2xl max-w-3xl mb-8">
+          Unlock the skull-twist powers of the <span class="text-[#0d1b2a]">Ultimate Teletubbies Fan Club</span>
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <button class="bg-[#0d1b2a] hover:bg-[#2e2e2e] text-white font-bold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105 border-2 border-[#0d1b2a]">
+            Join Now
+          </button>
+          <button class="bg-transparent hover:bg-[#0d1b2a] text-white font-bold py-3 px-8 rounded-lg transition duration-300 border-2 border-[#0d1b2a]">
+            Learn More
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {/* Why Join Section */}
+    <section class="py-20 bg-[#0d1b2a]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Join? Exclusive Benefits Await</h2>
+          <div class="w-24 h-1 bg-[#2e2e2e] mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {perks.map((perk, index) => (
+            <div 
+              key={index} 
+              class="bg-gradient-to-br from-[#2e2e2e] to-[#0d1b2a] p-8 rounded-xl border border-[#2e2e2e] hover:border-[#0d1b2a] transition-all duration-300 transform hover:-translate-y-2"
+            >
+              <div class="flex items-start">
+                <div class="mr-6 mt-1">
+                  <div class="w-12 h-12 rounded-full bg-[#0d1b2a] flex items-center justify-center">
+                    <i class={`fas fa-${index === 0 ? 'calendar-alt' : index === 1 ? 'shopping-bag' : index === 2 ? 'users' : 'star'} text-xl text-[#2e2e2e]`}></i>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold mb-3">{perk.title}</h3>
+                  <p class="text-[#cccccc]">{perk.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Events Section */}
+    <section class="py-20 bg-[#2e2e2e]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Upcoming Member Events</h2>
+          <p class="text-[#cccccc] max-w-2xl mx-auto">Join exclusive gatherings tailored for Tinky Winky Skulls members</p>
+          <div class="w-24 h-1 bg-[#0d1b2a] mx-auto mt-4"></div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-[#0d1b2a] transform -translate-x-1/2"></div>
+          <div class="space-y-12">
+            {events.map((event, index) => (
+              <div key={index} class="relative flex">
+                <div class="absolute left-6 top-4 w-4 h-4 rounded-full bg-[#0d1b2a] border-4 border-[#2e2e2e]"></div>
+                <div class="ml-16 bg-[#0d1b2a] p-6 rounded-lg border border-[#2e2e2e] w-full hover:border-[#0d1b2a] transition-colors">
+                  <div class="flex flex-col md:flex-row md:items-center justify-between">
+                    <div>
+                      <h3 class="text-xl font-bold">{event.title}</h3>
+                      <p class="text-[#cccccc] mt-1">{event.location}</p>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                      <span class="bg-[#0d1b2a] text-white px-4 py-2 rounded-full font-medium">{event.date}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Merchandise Preview */}
+    <section class="py-20 bg-[#0d1b2a]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Exclusive Merchandise</h2>
+          <p class="text-[#cccccc] max-w-2xl mx-auto">Limited edition items only for our skull-twist family</p>
+          <div class="w-24 h-1 bg-[#2e2e2e] mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gradient-to-br from-[#2e2e2e] to-[#0d1b2a] rounded-xl overflow-hidden border border-[#2e2e2e] hover:border-[#0d1b2a] transition-all duration-300 transform hover:-translate-y-2">
+            <div class="h-64 bg-gradient-to-br from-[#0d1b2a] to-[#2e2e2e] flex items-center justify-center">
+              <div class="w-32 h-32 rounded-full bg-[#2e2e2e] flex items-center justify-center border-4 border-[#0d1b2a]">
+                <i class="fas fa-tshirt text-5xl text-[#0d1b2a]"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Skull-Twist Hoodie</h3>
+              <p class="text-[#cccccc] mb-4">Purple hoodie with geometric Tinky Winky skull design</p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$49.99</span>
+                <button class="bg-[#0d1b2a] hover:bg-[#2e2e2e] text-white px-4 py-2 rounded-lg transition duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-[#2e2e2e] to-[#0d1b2a] rounded-xl overflow-hidden border border-[#2e2e2e] hover:border-[#0d1b2a] transition-all duration-300 transform hover:-translate-y-2">
+            <div class="h-64 bg-gradient-to-br from-[#0d1b2a] to-[#2e2e2e] flex items-center justify-center">
+              <div class="w-32 h-32 rounded-full bg-[#2e2e2e] flex items-center justify-center border-4 border-[#0d1b2a]">
+                <i class="fas fa-mug-hot text-5xl text-[#0d1b2a]"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Geometric Dipsy Mug</h3>
+              <p class="text-[#cccccc] mb-4">Limited edition 12oz ceramic mug with skull pattern</p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$24.99</span>
+                <button class="bg-[#0d1b2a] hover:bg-[#2e2e2e] text-white px-4 py-2 rounded-lg transition duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-[#2e2e2e] to-[#0d1b2a] rounded-xl overflow-hidden border border-[#2e2e2e] hover:border-[#0d1b2a] transition-all duration-300 transform hover:-translate-y-2">
+            <div class="h-64 bg-gradient-to-br from-[#0d1b2a] to-[#2e2e2e] flex items-center justify-center">
+              <div class="w-32 h-32 rounded-full bg-[#2e2e2e] flex items-center justify-center border-4 border-[#0d1b2a]">
+                <i class="fas fa-puzzle-piece text-5xl text-[#0d1b2a]"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Skull-Twist Poster</h3>
+              <p class="text-[#cccccc] mb-4">High-contrast print featuring all Teletubbies with skulls</p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-lg">$19.99</span>
+                <button class="bg-[#0d1b2a] hover:bg-[#2e2e2e] text-white px-4 py-2 rounded-lg transition duration-300">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="py-20 bg-gradient-to-r from-[#0d1b2a] to-[#2e2e2e]">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Join the Skull-Twist?</h2>
+        <p class="text-xl max-w-2xl mx-auto mb-10 text-[#cccccc]">
+          Become part of the elite Tinky Winky Skulls community today and unlock all exclusive perks!
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-[#2e2e2e] hover:bg-[#0d1b2a] text-white font-bold py-4 px-10 rounded-lg transition duration-300 text-lg border-2 border-[#2e2e2e]">
+            Join Now - 20% Off First Month
+          </button>
+          <button class="bg-transparent hover:bg-[#0d1b2a] text-white font-bold py-4 px-10 rounded-lg transition duration-300 text-lg border-2 border-[#2e2e2e]">
+            View Membership Tiers
+          </button>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

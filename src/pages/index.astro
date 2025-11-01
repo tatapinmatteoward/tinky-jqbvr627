@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  { 
+    icon: 'fas fa-crown', 
+    title: 'Exclusive Content', 
+    text: 'Unlock rare Teletubbies memorabilia fused with custom skull artwork.' 
+  },
+  { 
+    icon: 'fas fa-calendar-alt', 
+    title: 'Events & Meets', 
+    text: 'Attend virtual and in-person gatherings with themed cosplay and discussions.' 
+  },
+  { 
+    icon: 'fas fa-paint-brush', 
+    title: 'Fan Creations', 
+    text: 'Share your own skull-infused Teletubbies fan art, stories, and videos.' 
+  },
+  { 
+    icon: 'fas fa-tshirt', 
+    title: 'Merch Store', 
+    text: 'Shop unique apparel and accessories that blend innocence with intensity.' 
+  }
+];
+
+const testimonials = [
+  {
+    quote: "This community perfectly balances nostalgia with edge! The skull twist is genius.",
+    author: "SkullLover42"
+  },
+  {
+    quote: "Finally a fan club that understands the duality of Teletubbies - sweet and sinister!",
+    author: "NostalgiaNerd"
+  },
+  {
+    quote: "The merchandise is incredible! My favorite Teletubbies merch has never looked so bold.",
+    author: "GeometricGuru"
+  }
+];
+---
+
+<Layout title="Welcome to Tinky Winky Skulls" description="Discover the ultimate Teletubbies fan club reimagined with a bold skull twist, blending nostalgia and edgy vibes in a modern geometric style.">
+  <!-- Hero Section -->
+  <section class="relative py-24 md:py-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary to-accent transform -skew-y-3"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          Tinky Winky Skulls
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
+          The Ultimate Teletubbies Fan Club with a Skull-Twist
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-xl">
+            Join the Skull Pack
+          </button>
+          <button class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition duration-300 transform hover:scale-105">
+            Explore Merch
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Introduction Section -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Welcome to a New Era of Fan Culture</h2>
+        <p class="text-lg text-gray-300 mb-12 leading-relaxed">
+          Dive into a community that's all about celebrating the whimsical characters we grew up loving, 
+          but with a high-contrast, geometric edge that adds a rebellious flair.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div class="bg-primary p-8 rounded-xl border-2 border-accent transform transition duration-500 hover:scale-105">
+            <div class="text-5xl text-accent mb-4">🎮</div>
+            <h3 class="text-xl font-bold text-white mb-3">Teletubbies</h3>
+            <p class="text-gray-300">Nostalgic favorites reimagined with modern aesthetics</p>
+          </div>
+          
+          <div class="bg-primary p-8 rounded-xl border-2 border-accent transform transition duration-500 hover:scale-105">
+            <div class="text-5xl text-accent mb-4">💀</div>
+            <h3 class="text-xl font-bold text-white mb-3">Skull Twist</h3>
+            <p class="text-gray-300">Rebellious edge that transforms classic characters</p>
+          </div>
+          
+          <div class="bg-primary p-8 rounded-xl border-2 border-accent transform transition duration-500 hover:scale-105">
+            <div class="text-5xl text-accent mb-4">✨</div>
+            <h3 class="text-xl font-bold text-white mb-3">Geometric Design</h3>
+            <p class="text-gray-300">High-contrast visuals that blend form and function</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-gradient-to-br from-primary to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Join Us?</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-gray-800/50 backdrop-blur-sm p-8 rounded-xl border border-gray-700 hover:border-accent transition duration-300 transform hover:-translate-y-2">
+            <div class="text-4xl text-accent mb-6">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{feature.title}</h3>
+            <p class="text-gray-300">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Community Voices</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">What our members are saying about the Tinky Winky Skulls experience</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-xl border border-gray-700">
+            <div class="text-accent text-4xl mb-4">❝</div>
+            <p class="text-gray-300 mb-6 italic">"{testimonial.quote}"</p>
+            <p class="font-bold text-white">— {testimonial.author}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Join the Skull Pack?</h2>
+      <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+        Be part of the most modern Teletubbies fan experience that celebrates both innocence and rebellion.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="px-10 py-4 bg-white text-primary font-bold rounded-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105 shadow-xl text-lg">
+          Become a Member
+        </button>
+        <button class="px-10 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition duration-300 transform hover:scale-105 text-lg">
+          View Gallery
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>

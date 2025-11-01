@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    icon: 'fas fa-lock',
+    title: 'Exclusive Access',
+    text: 'Unlock hidden forums where we share spooky fan art, dark lore, and Teletubbies-inspired horror tales.'
+  },
+  {
+    icon: 'fas fa-ghost',
+    title: 'Community Events',
+    text: 'Participate in virtual hauntings, midnight watch parties, and gothic meetups for the brave.'
+  },
+  {
+    icon: 'fas fa-gift',
+    title: 'Member Perks',
+    text: 'Get early access to merchandise like skull-emblazoned Tinky Winky plushies and eerie enamel pins.'
+  }
+];
+
+const members = [
+  {
+    name: 'Eternal Noo-Noo',
+    role: 'Collector of Cursed Custards',
+    description: 'With over 500 spooky edits',
+    image: 'noo-noo'
+  },
+  {
+    name: "Dipsy's Ghost",
+    role: 'Master of Minimalist Horror',
+    description: 'Haunting our chats with eerie tales',
+    image: 'dipsy'
+  },
+  {
+    name: 'Laa-Laa\'s Lament',
+    role: 'Shadow Weaver',
+    description: 'Crafting haunting melodies with her spirit voice',
+    image: 'laa-laa'
+  },
+  {
+    name: 'Tinky Winky\'s Curse',
+    role: 'Keeper of Forgotten Tales',
+    description: 'Preserving dark memories of the Teletubbies universe',
+    image: 'tinky-winky'
+  }
+];
+---
+
+<Layout title="Members Page - Skulltubbies Unite" description="Join our eerie community of Teletubbies enthusiasts who embrace the shadows. Discover membership benefits, connect with fellow fans, and dive into spooky discussions.">
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-black to-gray-900 py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(158,0,0,0.1)_1px,transparent_1px)] bg-[length:50px_50px]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-block bg-[#9e0000] text-white px-6 py-2 rounded-full text-sm font-bold mb-6 tracking-wider">
+          BLOODLINE INVITATION
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          Members Page
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+          Join our eerie community of Teletubbies enthusiasts who embrace the shadows. Discover membership benefits, connect with fellow fans, and dive into spooky discussions.
+        </p>
+        <div class="flex justify-center">
+          <button class="bg-[#9e0000] hover:bg-[#7a0000] text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 border-2 border-[#9e0000]">
+            JOIN THE SHADOWS
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Join Section -->
+  <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Why Join Us?</h2>
+        <div class="w-24 h-1 bg-[#9e0000] mx-auto"></div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        {features.map((feature, index) => (
+          <div 
+            key={index}
+            class="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-[#9e0000] transition-all duration-300 transform hover:-translate-y-2"
+          >
+            <div class="text-[#9e0000] text-4xl mb-6">
+              <i class={feature.icon}></i>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+            <p class="text-gray-400">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Member Showcase -->
+  <section class="py-20 bg-black">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Our Esteemed Members</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          We honor our shadowy souls who have embraced the macabre side of Teletubbies
+        </p>
+        <div class="w-24 h-1 bg-[#9e0000] mx-auto mt-6"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {members.map((member, index) => (
+          <div 
+            key={index}
+            class="group relative bg-gray-900 rounded-xl overflow-hidden border border-gray-800 hover:border-[#9e0000] transition-all duration-300"
+          >
+            <div class="h-64 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+              <div class="bg-gray-700 border-2 border-dashed rounded-xl w-32 h-32" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white mb-2">{member.name}</h3>
+              <p class="text-[#9e0000] font-medium mb-3">{member.role}</p>
+              <p class="text-gray-400 text-sm">{member.description}</p>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#9e0000] to-[#6b0000]">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Join the Shadows</h2>
+      <p class="text-xl text-white max-w-2xl mx-auto mb-10">
+        Become part of the Skulltubbies Unite community where Teletubbies meet the supernatural
+      </p>
+      <button class="bg-white text-[#9e0000] hover:bg-gray-200 font-bold py-4 px-10 rounded-full text-lg transition duration-300 transform hover:scale-105">
+        REQUEST MEMBERSHIP
+      </button>
+    </div>
+  </section>
+
+  <!-- Footer Notes -->
+  <footer class="py-12 bg-gray-900 border-t border-gray-800">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-gray-500 mb-2">Uniting Teletubbies Fans in a Spooky Embrace</p>
+      <p class="text-gray-600 text-sm">© {new Date().getFullYear()} Skulltubbies Unite. All rights reserved.</p>
+    </div>
+  </footer>
+</Layout>

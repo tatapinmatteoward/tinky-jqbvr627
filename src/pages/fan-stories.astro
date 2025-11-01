@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const features = [
+  {
+    icon: 'fas fa-users',
+    title: 'Connect with Fellow Fans',
+    text: 'Join a global tribe of creators who love reimagining Teletubbies with a dark, modern twist.'
+  },
+  {
+    icon: 'fas fa-star',
+    title: 'Get Featured',
+    text: 'Top stories get spotlighted on our homepage and social channels.'
+  },
+  {
+    icon: 'fas fa-lightbulb',
+    title: 'Inspire Others',
+    text: 'Your geometric nightmares or skull-tastic adventures could spark the next big fan phenomenon.'
+  }
+];
+
+const submitSteps = [
+  {
+    step: '1',
+    title: 'Craft Your Tale',
+    description: 'Keep it family-friendly but with that signature skull edge. The world is your canvas.'
+  },
+  {
+    step: '2',
+    title: 'Submit Your Story',
+    description: 'Use our submission form and include a compelling title and brief synopsis.'
+  },
+  {
+    step: '3',
+    title: 'Share & Celebrate',
+    description: 'Watch as your story joins our ever-growing collection of skull-tastic adventures.'
+  }
+];
+
+const stories = [
+  {
+    id: 1,
+    title: 'The Skull Rebellion',
+    author: 'TinkyWinkyFan123',
+    excerpt: 'When Tinky Winky discovers the real history of the Teletubbies, he leads a rebellion against the custard overlords...',
+    date: '2023-10-15'
+  },
+  {
+    id: 2,
+    title: 'Laa-Laa\'s Ancient Treasure',
+    author: 'SkullScribe',
+    excerpt: 'La La La uncovers a hidden Skull Temple and discovers the truth about the Teletubbies\' origin...',
+    date: '2023-09-28'
+  },
+  {
+    id: 3,
+    title: 'The Custard Conspiracy',
+    author: 'TeletubbyTerror',
+    excerpt: 'Po finds himself caught in a web of lies when he discovers the conspiracy behind the custard supply...',
+    date: '2023-08-14'
+  }
+];
+---
+
+<Layout 
+  title="Fan Stories: Tales from the Skull-Teletubby Universe" 
+  description="Dive into the creative world of Tinky Winky Skulls fans! Share and discover fan-written stories that blend the whimsical Teletubbies with a edgy skull twist. Submit your own adventure today!"
+  tagline="The Ultimate Teletubbies Fan Club with a Skull-Twist"
+>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-primary to-accent py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+      <div class="absolute bottom-0 right-0 w-48 h-48 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          Fan Stories: Tales from the <span class="text-white">Skull-Teletubby Universe</span>
+        </h1>
+        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          Dive into the creative world of Tinky Winky Skulls fans! Share and discover fan-written stories that blend the whimsical Teletubbies with a edgy skull twist. Submit your own adventure today!
+        </p>
+        <button class="bg-white text-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+          Submit Your Story
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="py-20 bg-gradient-to-b from-primary to-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Welcome to Fan Stories</h2>
+          <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+        </div>
+        
+        <div class="bg-primary border-2 border-accent rounded-xl p-8 shadow-2xl">
+          <p class="text-xl text-gray-200 mb-6 leading-relaxed">
+            In the vibrant yet shadowy realm of <span class="font-bold text-white">Tinky Winky Skulls</span>, our fans bring their wildest imaginations to life. Here, the classic Teletubbies meet a high-contrast, geometric edge infused with skull motifs. Whether it's Tinky Winky leading a rebellion against custard overlords or Laa-Laa uncovering ancient skull treasures, your stories make our community thrive.
+          </p>
+          
+          <div class="grid md:grid-cols-3 gap-8 mt-12">
+            <div class="bg-accent bg-opacity-20 p-6 rounded-lg border border-accent border-opacity-30">
+              <div class="text-4xl text-accent mb-4">👻</div>
+              <h3 class="text-xl font-bold text-white mb-2">Darkly Whimsical</h3>
+              <p class="text-gray-300">Blend traditional characters with gothic and geometric aesthetics</p>
+            </div>
+            
+            <div class="bg-accent bg-opacity-20 p-6 rounded-lg border border-accent border-opacity-30">
+              <div class="text-4xl text-accent mb-4">✨</div>
+              <h3 class="text-xl font-bold text-white mb-2">Creative Freedom</h3>
+              <p class="text-gray-300">Unleash your imagination within our unique universe</p>
+            </div>
+            
+            <div class="bg-accent bg-opacity-20 p-6 rounded-lg border border-accent border-opacity-30">
+              <div class="text-4xl text-accent mb-4">🔥</div>
+              <h3 class="text-xl font-bold text-white mb-2">Community Driven</h3>
+              <p class="text-gray-300">Built and shaped by passionate fan creators like you</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Share Section -->
+  <section class="py-20 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Share Your Story?</h2>
+          <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div 
+              class="bg-primary p-8 rounded-xl border-2 border-accent transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div class="text-5xl text-accent mb-6">
+                <i class={feature.icon}></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">{feature.title}</h3>
+              <p class="text-gray-300 text-lg">{feature.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Submit Section -->
+  <section class="py-20 bg-gradient-to-b from-gray-900 to-primary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">How to Submit</h2>
+          <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Join our community by sharing your unique Skull-Teletubby adventures
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {submitSteps.map((step, index) => (
+            <div 
+              key={index}
+              class="relative bg-primary border-2 border-accent rounded-xl p-8 text-center transform transition-all duration-300 hover:shadow-2xl"
+            >
+              <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-accent w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                {step.step}
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4 mt-6">{step.title}</h3>
+              <p class="text-gray-300">{step.description}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div class="mt-16 text-center">
+          <button class="bg-accent text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg">
+            Submit Your Story Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Stories Section -->
+  <section class="py-20 bg-primary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Featured Stories</h2>
+          <div class="w-24 h-1 bg-accent mx-auto mb-8"></div>
+          <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+            Explore the most popular fan tales in our Skull-Teletubby universe
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {stories.map((story) => (
+            <div 
+              key={story.id}
+              class="bg-gray-800 border border-accent rounded-xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-3xl"
+            >
+              <div class="h-48 bg-gradient-to-r from-accent to-primary relative">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="text-6xl text-white">💀</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-2">{story.title}</h3>
+                <p class="text-gray-400 text-sm mb-4">by {story.author}</p>
+                <p class="text-gray-300 mb-4">{story.excerpt}</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-500 text-sm">{story.date}</span>
+                  <button class="text-accent hover:text-white font-medium text-sm">
+                    Read More
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="mt-12 text-center">
+          <button class="border-2 border-accent text-accent font-bold py-3 px-8 rounded-full hover:bg-accent hover:text-white transition-all">
+            View All Stories
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-accent to-primary">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join the Skull Rebellion?</h2>
+        <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+          Whether you're a seasoned storyteller or new to the world of Tinky Winky Skulls, your tale deserves to be told!
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-white text-primary font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg">
+            Submit Your Story
+          </button>
+          <button class="border-2 border-white text-white font-bold py-4 px-10 rounded-full text-lg hover:bg-white hover:text-primary transition-all">
+            Browse Stories
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

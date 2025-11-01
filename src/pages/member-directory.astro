@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const members = [
+  {
+    id: 1,
+    name: "Dipsy Doodle",
+    role: "Skull Art Director",
+    bio: "Creates stunning skull-Tinky Winky mashups with geometric precision",
+    color: "bg-red-500"
+  },
+  {
+    id: 2,
+    name: "Tinky Winky Twister",
+    role: "Community Coordinator",
+    bio: "Organizes virtual hangouts and fan events with a dark twist",
+    color: "bg-blue-500"
+  },
+  {
+    id: 3,
+    name: "Laa-Laa Luminous",
+    role: "Design Advocate",
+    bio: "Brings vibrant colors to our high-contrast geometric fan art",
+    color: "bg-green-500"
+  },
+  {
+    id: 4,
+    name: "Po Power",
+    role: "Content Creator",
+    bio: "Documenting the skull-twist journey through creative storytelling",
+    color: "bg-yellow-500"
+  },
+  {
+    id: 5,
+    name: "Snickers",
+    role: "Event Specialist",
+    bio: "Organizes exclusive merch drops and themed challenges",
+    color: "bg-purple-500"
+  },
+  {
+    id: 6,
+    name: "Coco Cavern",
+    role: "Social Media Manager",
+    bio: "Curates the most edgy Teletubbies content for our community",
+    color: "bg-pink-500"
+  }
+];
+
+const features = [
+  {
+    icon: "fas fa-users",
+    title: "Connect & Collaborate",
+    text: "Network with like-minded fans for events, art swaps, and virtual hangouts."
+  },
+  {
+    icon: "fas fa-paint-brush",
+    title: "Showcase Your Style",
+    text: "Upload your custom Teletubbies-skull mashups and geometric designs."
+  },
+  {
+    icon: "fas fa-gift",
+    title: "Exclusive Perks",
+    text: "Directory members get early access to club merch and themed challenges."
+  }
+];
+---
+
+<Layout title="Member Directory - Tinky Winky Skulls" description="Explore our vibrant community of Teletubbies enthusiasts who embrace the skull-twist. Connect with fellow fans, share your passion, and discover unique profiles in our modern directory.">
+  <!-- Hero Section -->
+  <div class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-primary to-accent transform -skew-y-3"></div>
+    <div class="relative container mx-auto px-4 py-24 md:py-32">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+          Member Directory
+        </h1>
+        <p class="text-xl text-gray-200 mb-8">
+          Explore our vibrant community of Teletubbies enthusiasts who embrace the skull-twist
+        </p>
+        <div class="flex space-x-4">
+          <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center">
+            <i class="fas fa-skull text-primary text-2xl"></i>
+          </div>
+          <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center">
+            <i class="fas fa-teletubbies text-primary text-2xl"></i>
+          </div>
+          <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center">
+            <i class="fas fa-paint-brush text-primary text-2xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="bg-gradient-to-r from-primary to-accent p-1 rounded-2xl">
+        <div class="bg-gray-900 rounded-2xl p-8">
+          <h2 class="text-3xl font-bold text-white mb-6">Welcome to the <span class="text-accent">Tinky Winky Skulls</span> Member Directory</h2>
+          <div class="prose prose-lg prose-invert max-w-none text-gray-300">
+            <p class="mb-4">
+              <strong>Discover the heartbeat of our fan club—where Teletubbies meet edgy skulls in a symphony of fandom.</strong>
+            </p>
+            <p>
+              In the <strong>Ultimate Teletubbies Fan Club with a Skull-Twist</strong>, our members are the stars! This directory showcases the creative souls who bring high-contrast geometry and bold vibes to our community. Whether you're a die-hard Dipsy devotee or a skull-infused Tinky Winky aficionado, find your tribe here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Why Join the Directory?</h2>
+        <div class="w-24 h-1 bg-accent mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-gray-900 rounded-xl p-8 border border-gray-700 hover:border-accent transition-all duration-300 transform hover:-translate-y-2">
+            <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-2xl text-accent`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{feature.title}</h3>
+            <p class="text-gray-400">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Members Grid -->
+  <section class="py-16 bg-gray-900">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Featured Members</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">
+          Meet the creative souls who make our community extraordinary
+        </p>
+        <div class="w-24 h-1 bg-accent mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {members.map((member) => (
+          <div key={member.id} class="group">
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden border border-gray-700 transition-all duration-300 hover:border-accent hover:shadow-xl">
+              <div class="h-48 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent"></div>
+                <div class="absolute bottom-4 left-4">
+                  <div class={`w-16 h-16 rounded-full ${member.color} flex items-center justify-center border-4 border-gray-900`}>
+                    <span class="text-white font-bold text-xl">{member.name.charAt(0)}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-bold text-white">{member.name}</h3>
+                  <span class="text-xs px-2 py-1 rounded-full bg-accent text-primary font-bold">#{member.id}</span>
+                </div>
+                <p class="text-accent font-semibold mb-3">{member.role}</p>
+                <p class="text-gray-400 text-sm">{member.bio}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-gradient-to-r from-primary to-accent">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join the Skulls?</h2>
+      <p class="text-xl text-gray-200 max-w-2xl mx-auto mb-10">
+        Become part of the most exclusive Teletubbies fan community with a twist
+      </p>
+      <div class="flex justify-center space-x-4">
+        <button class="px-8 py-3 bg-white text-primary font-bold rounded-full hover:bg-gray-200 transition duration-300 transform hover:scale-105">
+          Join Now
+        </button>
+        <button class="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-primary transition duration-300">
+          Explore More
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>
